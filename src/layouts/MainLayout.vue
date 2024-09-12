@@ -1,106 +1,91 @@
 <template>
   <q-layout view="lHh Lpr lFf">
-    <q-header elevated>
-      <q-toolbar>
-        <q-btn
-          flat
-          dense
-          round
-          icon="menu"
-          aria-label="Menu"
-          @click="toggleLeftDrawer"
-        />
-
-        <q-toolbar-title>
-          Quasar App
-        </q-toolbar-title>
-
-        <div>Quasar v{{ $q.version }}</div>
-      </q-toolbar>
-    </q-header>
-
-    <q-drawer
-      v-model="leftDrawerOpen"
-      show-if-above
-      bordered
-    >
-      <q-list>
-        <q-item-label
-          header
-        >
-          Essential Links
-        </q-item-label>
-
-        <EssentialLink
-          v-for="link in linksList"
-          :key="link.title"
-          v-bind="link"
-        />
-      </q-list>
-    </q-drawer>
+    <q-page-container class="chartflow-layout">
+      <q-header elevated class="chartflow-header text-black">
+        <q-toolbar class="toolbar-centered">
+          <q-icon class="logo">
+            <img src="/logo.svg" />
+          </q-icon>
+          <q-tabs v-model="tab" class="navlink">
+            <Navbar v-for="link in navLinks" :key="link.title" v-bind="link" />
+          </q-tabs>
+          <q-btn class="get-started" label="Get Started" />
+        </q-toolbar>
+      </q-header>
+    </q-page-container>
 
     <q-page-container>
       <router-view />
+      <FooterComponent />
     </q-page-container>
   </q-layout>
 </template>
 
 <script setup>
-import { ref } from 'vue'
-import EssentialLink from 'components/EssentialLink.vue'
+import { ref } from "vue";
+import Navbar from "src/components/navbar/Navbar.vue";
+import FooterComponent from "src/components/Footer.vue";
 
 defineOptions({
-  name: 'MainLayout'
-})
+  name: "MainLayout",
+});
 
-const linksList = [
+const navLinks = [
   {
-    title: 'Docs',
-    caption: 'quasar.dev',
-    icon: 'school',
-    link: 'https://quasar.dev'
+    title: "Features",
   },
   {
-    title: 'Github',
-    caption: 'github.com/quasarframework',
-    icon: 'code',
-    link: 'https://github.com/quasarframework'
+    title: "Testimonials",
   },
   {
-    title: 'Discord Chat Channel',
-    caption: 'chat.quasar.dev',
-    icon: 'chat',
-    link: 'https://chat.quasar.dev'
+    title: "Pricing",
   },
   {
-    title: 'Forum',
-    caption: 'forum.quasar.dev',
-    icon: 'record_voice_over',
-    link: 'https://forum.quasar.dev'
+    title: "Login",
   },
-  {
-    title: 'Twitter',
-    caption: '@quasarframework',
-    icon: 'rss_feed',
-    link: 'https://twitter.quasar.dev'
-  },
-  {
-    title: 'Facebook',
-    caption: '@QuasarFramework',
-    icon: 'public',
-    link: 'https://facebook.quasar.dev'
-  },
-  {
-    title: 'Quasar Awesome',
-    caption: 'Community Quasar projects',
-    icon: 'favorite',
-    link: 'https://awesome.quasar.dev'
-  }
-]
+];
 
-const leftDrawerOpen = ref(false)
+const leftDrawerOpen = ref(false);
 
-function toggleLeftDrawer () {
-  leftDrawerOpen.value = !leftDrawerOpen.value
+function toggleLeftDrawer() {
+  leftDrawerOpen.value = !leftDrawerOpen.value;
 }
 </script>
+<style lang="scss" scoped>
+.chartflow-layout {
+  width: 90%;
+  max-width: 80vw; /* Ensure it doesn't overflow the viewport width */
+  margin: 0 auto;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+.chartflow-header {
+  width: 90%;
+  margin: 0 auto;
+}
+.logo {
+  width: 150px;
+  height: 70px;
+}
+.toolbar-centered {
+  display: flex;
+  justify-content: space-between; /* Spread items across the toolbar */
+  align-items: center; /* Vertically center items */
+  width: 100%;
+}
+
+.navlink {
+  flex: 1; /* Take up available space */
+  display: flex;
+  justify-content: center; /* Center the nav links horizontally */
+  align-items: center;
+}
+
+.get-started {
+  background-color: #2f76d3; /* Set background to blue */
+  color: white; /* Set text to white */
+  border-radius: 20px; /* Make the button circular */
+  padding: 6px 12px;
+  width: 140px; /* Set width */
+  height: 40px; /* Set height to keep it circular */
+}
+</style>
