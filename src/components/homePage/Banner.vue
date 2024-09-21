@@ -5,6 +5,7 @@
         Build your Future with Innovative
         <span class="text-blue">EHR Solutions</span>
       </h1>
+      <q-img src="/assets/homePage/Path.png" class="path-image" />
       <p class="paragraph">
         ChartFlow is a realistic EHR platform tailored for nursing, allied
         health, and medical programs. Experience the future of learning in
@@ -121,5 +122,11 @@ defineOptions({
   width: 150px;
   height: auto;
   padding: 0 15px;
+}
+
+.path-image {
+  position: absolute;
+  left: 0;
+  width: 150px;
 }
 </style>

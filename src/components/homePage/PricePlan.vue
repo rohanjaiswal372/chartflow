@@ -44,27 +44,27 @@
       <div class="box blue">
         <p class="plan-floating-text">MOST POPULAR</p>
         <div class="blue-container">
-          <p class="plan-title blue-text blue-btn">Basic</p>
+          <p class="plan-title blue-text blue-btn">Plus</p>
           <h3 class="plan-price blue-text">
-            $15 <span class="plan-title-sub">/ student</span>
+            $25 <span class="plan-title-sub">/ student</span>
           </h3>
-          <p class="plan-duration">6 months</p>
+          <p class="plan-duration">12 months</p>
           <p class="plan-description">
-            Affordable and packed with features. Elevate your learning journey
-            with a 6-month membership.
+            A year of learning opportunity. Dive deep into healthcare education
+            with a 12-month membership.
           </p>
           <div class="bullet-points text-left">
             <p>
               <q-icon name="check_circle_outline" color="blue" size="20px" />
-              Perfect for CNA & emergency mdcn
-            </p>
-            <p>
-              <q-icon name="check_circle_outline" color="blue" size="20px" />
-              Use the system just once or twice
+              Ideal for practical nursing and more
             </p>
             <p>
               <q-icon name="check_circle_outline" color="blue" size="20px" />
               Renew or extend license with any plan
+            </p>
+            <p>
+              <q-icon name="check_circle_outline" color="blue" size="20px" />
+              Additional 1 month FREE access
             </p>
           </div>
           <div class="plan-button">
@@ -75,10 +75,40 @@
           </div>
         </div>
       </div>
-
       <div class="box red">
-        <p class="plan-title red-text red-btn">Basic</p>
+        <p class="plan-title red-text red-btn">Pro</p>
         <h3 class="plan-price red-text">
+          $45 <span class="plan-title-sub">/ student</span>
+        </h3>
+        <p class="plan-duration">24 months</p>
+        <p class="plan-description">
+          Maximize your educational journey with a 2-year membership. More time,
+          more benefits.
+        </p>
+        <div class="bullet-points text-left">
+          <p>
+            <q-icon name="check_circle_outline" color="red" size="20px" />
+            Designed for ADN and BSN
+          </p>
+          <p>
+            <q-icon name="check_circle_outline" color="red" size="20px" />
+            Most affordable EHR on the market
+          </p>
+          <p>
+            <q-icon name="check_circle_outline" color="red" size="20px" />
+            Work directly with our Product team
+          </p>
+        </div>
+        <div class="plan-button">
+          <q-btn
+            class="plan-button-get-started red-text red-bg"
+            label="Contact Sales"
+          />
+        </div>
+      </div>
+      <div class="box green">
+        <p class="plan-title green-text green-btn">Basic</p>
+        <h3 class="plan-price green-text">
           $15 <span class="plan-title-sub">/ student</span>
         </h3>
         <p class="plan-duration">6 months</p>
@@ -88,21 +118,21 @@
         </p>
         <div class="bullet-points text-left">
           <p>
-            <q-icon name="check_circle_outline" color="red" size="20px" />
+            <q-icon name="check_circle_outline" color="green" size="20px" />
             Perfect for CNA & emergency mdcn
           </p>
           <p>
-            <q-icon name="check_circle_outline" color="red" size="20px" />
+            <q-icon name="check_circle_outline" color="green" size="20px" />
             Use the system just once or twice
           </p>
           <p>
-            <q-icon name="check_circle_outline" color="red" size="20px" />
+            <q-icon name="check_circle_outline" color="green" size="20px" />
             Renew or extend license with any plan
           </p>
         </div>
         <div class="plan-button">
           <q-btn
-            class="plan-button-get-started red-text red-bg"
+            class="plan-button-get-started green-text green-bg"
             label="Get Started"
           />
         </div>
@@ -141,15 +171,15 @@ defineOptions({
 .container {
   display: flex;
   justify-content: space-between;
-  gap: 3rem;
+  gap: 1rem;
   padding: 1rem;
-  width: 80vw;
+  width: 90vw;
 }
 
 .box {
   background-color: #ffffff;
   border-radius: 60px;
-  padding: 4rem 2rem;
+  padding: 4rem 1rem 0 1rem;
   flex: 1;
 }
 
