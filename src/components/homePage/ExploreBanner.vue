@@ -61,7 +61,7 @@
         </div>
         <div class="right-block">
           <div class="right-content">
-            <div class="logo">
+            <div class="img-wrapper">
               <q-img
                 class="image-with-shadow"
                 src="/assets/homePage/scanning.png"
@@ -71,13 +71,13 @@
           </div>
         </div>
       </div>
-      <hr class="custom-line" />
+      <hr class="horizontal-line" />
       <!-- 2 -->
       <div class="container">
         <div class="left-block">
           <div class="left-content">
             <div class="dashed-vertical-line"></div>
-            <div class="logo">
+            <div class="img-wrapper">
               <q-img
                 class="image-with-shadow"
                 src="/assets/homePage/controlPanel.png"
@@ -134,7 +134,7 @@
           </div>
         </div>
       </div>
-      <hr class="custom-line" />
+      <hr class="horizontal-line" />
       <!-- 3 -->
       <div class="container">
         <div class="left-block">
@@ -188,7 +188,7 @@
         <div class="right-block">
           <div class="right-content">
             <div class="dashed-vertical-line"></div>
-            <div class="logo">
+            <div class="img-wrapper">
               <q-img
                 class="image-with-shadow"
                 src="/assets/homePage/curriculum.png"
@@ -198,13 +198,13 @@
           </div>
         </div>
       </div>
-      <hr class="custom-line" />
+      <hr class="horizontal-line" />
       <!-- 4 -->
       <div class="container">
         <div class="left-block">
           <div class="left-content">
             <div class="dashed-vertical-line"></div>
-            <div class="logo">
+            <div class="img-wrapper">
               <q-img
                 class="image-with-shadow"
                 src="/assets/homePage/layer4.png"
@@ -261,7 +261,7 @@
           </div>
         </div>
       </div>
-      <hr class="custom-line" />
+      <hr class="horizontal-line" />
       <!-- 5 -->
       <div class="container">
         <div class="left-block">
@@ -314,7 +314,7 @@
         <div class="right-block">
           <div class="right-content">
             <div class="dashed-vertical-line"></div>
-            <div class="logo">
+            <div class="img-wrapper">
               <q-img
                 class="image-with-shadow"
                 src="/assets/homePage/layer5.png"
@@ -381,13 +381,33 @@ defineOptions({
 .container {
   display: flex;
   justify-content: space-between;
-  align-items: stretch;
+  align-items: center;
   gap: 4rem;
   width: 80vw;
   padding: 0;
 }
 
-.custom-line {
+.left-block,
+.right-block {
+  flex: 1;
+}
+
+.left-content,
+.right-content {
+  margin: 0;
+  border-radius: 8px;
+  box-shadow: 0;
+}
+
+.image-with-shadow {
+  box-shadow: 0px 10px 15px #e5eefb;
+  border-radius: 8px;
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+}
+
+.horizontal-line {
   width: 52%;
   height: 2px;
   margin: 0px auto;
@@ -402,6 +422,7 @@ defineOptions({
 }
 
 .dashed-vertical-line {
+  position: relative;
   width: 2px;
   height: 70px;
   background: repeating-linear-gradient(
@@ -420,20 +441,82 @@ defineOptions({
   margin: 0px auto;
 }
 
-.left-block,
-.right-block {
-  flex: 1;
+/* Media queries for responsiveness */
+@media (max-width: 1350px) {
+  .get-started-free {
+    margin-bottom: 20px;
+  }
+  .horizontal-line {
+    position: relative;
+    width: 48%;
+    left: -3rem;
+  }
+
+  .dashed-vertical-line {
+    height: 150px;
+    z-index: -999;
+  }
 }
 
-.left-content,
-.right-content {
-  margin: 0;
-  border-radius: 8px;
-  box-shadow: 0;
+@media (max-width: 1024px) {
+  .sub-header {
+    font-size: 32px;
+    line-height: 32px;
+  }
+
+  .sub-para {
+    font-size: 22px;
+    line-height: 28px;
+  }
+
+  .bullet-points p {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 14px;
+  }
+
+  .get-started-free {
+    margin-bottom: 20px;
+  }
+  .horizontal-line {
+    position: relative;
+    width: 50%;
+    left: -2rem;
+  }
+
+  .dashed-vertical-line {
+    height: 300px;
+    z-index: -999;
+  }
 }
 
-.image-with-shadow {
-  box-shadow: 0px 10px 15px #e5eefb; /* Horizontal offset, vertical offset, blur, shadow color */
-  border-radius: 8px; /* Optional: adds rounded corners */
+@media (max-width: 768px) {
+  .container {
+    gap: 2rem;
+  }
+  .sub-header {
+    font-size: 22px;
+    line-height: 28px;
+  }
+
+  .sub-para {
+    font-size: 16px;
+    line-height: 22px;
+  }
+
+  .bullet-points p {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 14px;
+  }
+
+  .get-started-free {
+    margin-bottom: 20px;
+  }
+
+  .dashed-vertical-line {
+    height: 300px;
+    z-index: -999;
+  }
 }
 </style>

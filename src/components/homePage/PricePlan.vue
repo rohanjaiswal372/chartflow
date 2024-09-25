@@ -170,6 +170,7 @@ defineOptions({
 
 .container {
   display: flex;
+  flex-wrap: wrap; /* Allow boxes to wrap on smaller screens */
   justify-content: space-between;
   gap: 1rem;
   padding: 1rem;
@@ -181,6 +182,33 @@ defineOptions({
   border-radius: 60px;
   padding: 4rem 1rem 0 1rem;
   flex: 1;
+  min-width: 280px; /* Ensure a minimum size for small screens */
+  max-width: 100%; /* Prevent overflowing */
+  box-sizing: border-box;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 1200px) {
+  .box {
+    flex-basis: 45%; /* Boxes will take 45% of the width on medium screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .box {
+    flex-basis: 100%; /* Full-width boxes on smaller screens */
+    margin-bottom: 1rem; /* Add margin between stacked boxes */
+  }
+}
+
+@media (max-width: 576px) {
+  .container {
+    justify-content: center; /* Center the boxes on small screens */
+  }
+
+  .box {
+    padding: 2rem 1rem; /* Reduce padding on smaller screens */
+  }
 }
 
 .plan-title {
