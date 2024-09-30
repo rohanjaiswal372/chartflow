@@ -449,12 +449,30 @@ defineOptions({
   .horizontal-line {
     position: relative;
     width: 48%;
-    left: -3rem;
+    margin: 0 auto;
+    left: -1rem;
   }
 
   .dashed-vertical-line {
-    height: 150px;
+    height: 180px;
     z-index: -999;
+  }
+}
+/* Media query for min-width: 1020px */
+@media (min-width: 1035px) and (max-width: 1250px) {
+  .horizontal-line {
+    width: 47%;
+    margin: 0 auto;
+    left: -3rem;
+  }
+}
+
+/* Media query for min-width: 1020px */
+@media (min-width: 1020px) and (max-width: 1035px) {
+  .horizontal-line {
+    width: 48%;
+    margin: 0 auto;
+    left: -2rem;
   }
 }
 
@@ -482,6 +500,7 @@ defineOptions({
     position: relative;
     width: 50%;
     left: -2rem;
+    margin: 0 auto;
   }
 
   .dashed-vertical-line {
